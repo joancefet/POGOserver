@@ -46,6 +46,7 @@ export function processResponse(player, req) {
         case "UPGRADE_POKEMON":
         case "GET_ASSET_DIGEST":
         case "NICKNAME_POKEMON":
+        case "CLAIM_CODENAME":
         case "GET_HATCHED_EGGS":
         case "LEVEL_UP_REWARDS":
         case "GET_PLAYER_PROFILE":
@@ -68,6 +69,7 @@ export function processResponse(player, req) {
         case "DOWNLOAD_SETTINGS":
         case "DOWNLOAD_REMOTE_CONFIG_VERSION":
         case "DOWNLOAD_ITEM_TEMPLATES":
+        case "MARK_TUTORIAL_COMPLETE":
           msg.player = player;
           player.world.getPacket(req.request_type, msg).then((result) => {
             resolve(result);
